@@ -1,4 +1,4 @@
-package com.deimos.jwtaauthenticatorentities;
+package com.deimos.jwtaauthenticator.entities;
 
 import java.util.ArrayList;
 import java.util.Collection;

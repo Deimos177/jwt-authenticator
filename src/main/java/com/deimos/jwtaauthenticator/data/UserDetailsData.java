@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.deimos.jwtaauthenticatorentities.User;
+import com.deimos.jwtaauthenticator.entities.User;
 
 public class UserDetailsData implements UserDetails {
 

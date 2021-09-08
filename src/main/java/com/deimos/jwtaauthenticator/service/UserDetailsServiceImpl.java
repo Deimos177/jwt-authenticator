@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import com.deimos.jwtaauthenticator.data.UserDetailsData;
+import com.deimos.jwtaauthenticator.entities.User;
 import com.deimos.jwtaauthenticator.repository.UserRepository;
-import com.deimos.jwtaauthenticatorentities.User;
 
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {

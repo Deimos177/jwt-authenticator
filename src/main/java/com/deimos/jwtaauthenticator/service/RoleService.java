@@ -6,7 +6,7 @@ import javax.management.relation.RoleNotFoundException;
 
 import org.springframework.http.ResponseEntity;
 
-import com.deimos.jwtaauthenticatorentities.Role;
+import com.deimos.jwtaauthenticator.entities.Role;
 
 public interface RoleService {
 	

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.deimos.jwtaauthenticator.dto.RequestAddRoleDto;
+import com.deimos.jwtaauthenticator.entities.User;
 import com.deimos.jwtaauthenticator.service.UserService;
-import com.deimos.jwtaauthenticatorentities.User;
 
 @RestController
 @RequestMapping("/user")

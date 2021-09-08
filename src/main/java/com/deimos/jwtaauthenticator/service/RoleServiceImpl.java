@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.deimos.jwtaauthenticator.entities.Role;
 import com.deimos.jwtaauthenticator.repository.RoleRepository;
-import com.deimos.jwtaauthenticatorentities.Role;
 
 @Service
 public class RoleServiceImpl implements RoleService{

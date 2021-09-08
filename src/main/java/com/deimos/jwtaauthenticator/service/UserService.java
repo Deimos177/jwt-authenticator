@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.deimos.jwtaauthenticatorentities.User;
+import com.deimos.jwtaauthenticator.entities.User;
 
 public interface UserService {
 	ResponseEntity<List<User>> listAll();

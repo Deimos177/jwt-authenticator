@@ -13,10 +13,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.deimos.jwtaauthenticator.entities.Role;
+import com.deimos.jwtaauthenticator.entities.User;
 import com.deimos.jwtaauthenticator.repository.RoleRepository;
 import com.deimos.jwtaauthenticator.repository.UserRepository;
-import com.deimos.jwtaauthenticatorentities.Role;
-import com.deimos.jwtaauthenticatorentities.User;
 
 @Service
 @Transactional

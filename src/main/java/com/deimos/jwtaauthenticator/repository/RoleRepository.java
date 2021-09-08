@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.deimos.jwtaauthenticatorentities.Role;
+import com.deimos.jwtaauthenticator.entities.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Long>{
 	

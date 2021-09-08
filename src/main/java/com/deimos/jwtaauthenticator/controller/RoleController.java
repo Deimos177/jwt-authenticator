@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.deimos.jwtaauthenticator.entities.Role;
 import com.deimos.jwtaauthenticator.service.RoleService;
-import com.deimos.jwtaauthenticatorentities.Role;
 
 @RequestMapping(path = "/role", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RoleController {
@@ -29,7 +29,7 @@ public class RoleController {
 		return roleService.createRole(rolename);
 	}
 	
-	@GetMapping(path = "/all", consumes = MediaType.ALL_VALUE)
+	@GetMapping(path = "/listall", consumes = MediaType.ALL_VALUE)
 	public ResponseEntity<List<Role>> findAllRoles(){
 		
 		return roleService.findAllRoles();

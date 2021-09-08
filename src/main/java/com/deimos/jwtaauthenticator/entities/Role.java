@@ -1,4 +1,4 @@
-package com.deimos.jwtaauthenticatorentities;
+package com.deimos.jwtaauthenticator.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

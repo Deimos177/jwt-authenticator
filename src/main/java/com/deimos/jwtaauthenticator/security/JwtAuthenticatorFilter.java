@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.deimos.jwtaauthenticator.data.UserDetailsData;
-import com.deimos.jwtaauthenticatorentities.User;
+import com.deimos.jwtaauthenticator.entities.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JwtAuthenticatorFilter extends UsernamePasswordAuthenticationFilter {
