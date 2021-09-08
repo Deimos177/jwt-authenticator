@@ -34,6 +34,8 @@ $ mvn spring-boot:run
 
 <h3>Base route: /jwt-authenticator</h3>
 
+<h4>/login</h4>
+
 <h4>/user</h4>
 
 <strong> - /listall</strong> </br>
