@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.deimos.jwtaauthenticator.entities.Role;
 import com.deimos.jwtaauthenticator.entities.User;
 
 public class UserDetailsData implements UserDetails {
@@ -52,5 +53,9 @@ public class UserDetailsData implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+	
+	public Collection<Role> getRoles(){
+		return user.get().getRoles();
 	}
 }

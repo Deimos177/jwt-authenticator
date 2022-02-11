@@ -1,7 +1,9 @@
 package com.deimos.jwtaauthenticator.security;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.servlet.FilterChain;
@@ -19,6 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.deimos.jwtaauthenticator.data.UserDetailsData;
+import com.deimos.jwtaauthenticator.dto.AuthenticationResponseDto;
+import com.deimos.jwtaauthenticator.entities.Role;
 import com.deimos.jwtaauthenticator.entities.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -54,12 +58,26 @@ public class JwtAuthenticatorFilter extends UsernamePasswordAuthenticationFilter
 			Authentication authResult) throws IOException, ServletException {
 
 		UserDetailsData userData = (UserDetailsData) authResult.getPrincipal();
+		
+		AuthenticationResponseDto authenticationResponseDto = new AuthenticationResponseDto();
 
 		String accessToken = JWT.create().withSubject(userData.getUsername())
 				.withExpiresAt(new Date(System.currentTimeMillis() + JWT_EXPIRATION_TIME))
 				.withClaim("roles", userData.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
 				.sign(ALGORITHM);
+		
+		List<String> roles =  new ArrayList<>();
+		
+		for(Role role : userData.getRoles()) {
+			roles.add(role.getName());
+		}
+		
+		authenticationResponseDto.setName(userData.getUsername());
+		authenticationResponseDto.setToken(accessToken);
+		authenticationResponseDto.setRoles(roles);
+		
+		ObjectMapper mapper = new ObjectMapper();
 
-		response.getWriter().write(String.format("Access token: %s", accessToken));
+		response.getWriter().write(mapper.writeValueAsString(authenticationResponseDto));
 	}
 }

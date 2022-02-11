@@ -47,7 +47,11 @@ public class JwtConfiguration extends WebSecurityConfigurerAdapter {
 	CorsConfigurationSource corsConfigurationSource() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		
+		
 		CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
+		corsConfiguration.addAllowedOrigin("");
+		corsConfiguration.addAllowedOriginPattern("/**");
+		
 		source.registerCorsConfiguration("/**", corsConfiguration);
 		return source;
 	}
